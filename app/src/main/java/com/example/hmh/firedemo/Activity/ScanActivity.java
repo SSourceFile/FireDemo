@@ -84,6 +84,11 @@ public class ScanActivity extends BaseActivity {
         return R.layout.activity_scan;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
