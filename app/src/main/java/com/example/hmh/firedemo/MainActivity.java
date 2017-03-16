@@ -11,6 +11,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -19,13 +20,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hmh.firedemo.Activity.ScanActivity;
+import com.example.hmh.firedemo.Activity.ServiceActivity;
+import com.example.hmh.firedemo.adapter.HeaderAndFooterWrapper;
+import com.example.hmh.firedemo.adapter.ImageAdapter;
 import com.example.hmh.firedemo.base.BaseActivity;
 import com.example.hmh.firedemo.utils.FinalApi;
 import com.example.hmh.firedemo.utils.ImageUtil;
 import com.jakewharton.rxbinding2.view.RxView;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.orhanobut.logger.Logger;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import io.reactivex.Observer;
@@ -37,8 +45,6 @@ import io.reactivex.disposables.Disposable;
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
-
     @BindView(R.id.scan)
     TextView mScan;
     @BindView(R.id.toolbar)
@@ -49,6 +55,7 @@ public class MainActivity extends BaseActivity
     NavigationView mNavView;
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+    private XRecyclerView recycle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +115,18 @@ public class MainActivity extends BaseActivity
 //            }
 //        });
         Logger.e("hahhaahhah");
+        List<String> list = new ArrayList<>();
+        for(int i = 0; i<20; i++){
+            list.add("哈哈"+i);
+        }
+        ImageAdapter mAdapter = new ImageAdapter(list);
+        HeaderAndFooterWrapper wrapper = new HeaderAndFooterWrapper(mAdapter);
+        recycle = (XRecyclerView) findViewById(R.id.recycle_view);
+        TextView tv = new TextView(this);
+        tv.setText("日了老板的");
+        recycle.setLayoutManager(new LinearLayoutManager(this));
+        recycle.addHeaderView(tv);
+        recycle.setAdapter(mAdapter);
     }
 
 
@@ -186,6 +205,7 @@ public class MainActivity extends BaseActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            startActivity(new Intent(MainActivity.this, ServiceActivity.class));
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
