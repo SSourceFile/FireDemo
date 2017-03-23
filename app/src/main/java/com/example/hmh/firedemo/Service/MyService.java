@@ -8,11 +8,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.widget.RemoteViews;
 
 import com.example.hmh.firedemo.Activity.ServiceActivity;
+import com.example.hmh.firedemo.MyAIDLService;
 import com.example.hmh.firedemo.R;
 import com.orhanobut.logger.Logger;
 
@@ -62,7 +64,7 @@ public class MyService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return binder;
+        return mStub;
     }
 
     public static class MyBinder extends Binder{
@@ -77,6 +79,28 @@ public class MyService extends Service {
             }).start();
         }
     }
+
+
+    /**AIDL的使用*/
+    MyAIDLService.Stub mStub = new MyAIDLService.Stub() {
+        @Override
+        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+
+        }
+
+        @Override
+        public int plus(int a, int b) throws RemoteException {
+            return a + b;
+        }
+
+        @Override
+        public String toUpperCase(String str) throws RemoteException {
+            if(str != null){
+                return str.toUpperCase();
+            }
+            return null;
+        }
+    };
 
 
 }

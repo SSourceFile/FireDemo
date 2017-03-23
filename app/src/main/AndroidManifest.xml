@@ -23,10 +23,15 @@
 
         <activity android:name=".Activity.ScanActivity"/>
         <activity android:name=".Activity.ServiceActivity"/>
+        <activity android:name=".Activity.RxjavaTestActivity"/>
+
 
         <!--服务-->
         <service android:name="com.example.hmh.firedemo.Service.MyService"
             android:process=":remote">
+            <intent-filter>
+                <action android:name="com.example.hmh.firedemo.MyAIDLService"></action>
+            </intent-filter>
 
         </service>
     </application>

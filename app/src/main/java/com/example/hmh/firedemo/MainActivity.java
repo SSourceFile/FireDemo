@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hmh.firedemo.Activity.RxjavaTestActivity;
 import com.example.hmh.firedemo.Activity.ScanActivity;
 import com.example.hmh.firedemo.Activity.ServiceActivity;
 import com.example.hmh.firedemo.adapter.HeaderAndFooterWrapper;
@@ -207,6 +208,7 @@ public class MainActivity extends BaseActivity
             // Handle the camera action
             startActivity(new Intent(MainActivity.this, ServiceActivity.class));
         } else if (id == R.id.nav_gallery) {
+            startActivity(new Intent(MainActivity.this, RxjavaTestActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
 
