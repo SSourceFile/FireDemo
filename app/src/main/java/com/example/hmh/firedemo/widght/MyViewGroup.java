@@ -3,6 +3,7 @@ package com.example.hmh.firedemo.widght;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
 
 import com.orhanobut.logger.Logger;
@@ -38,5 +39,10 @@ public class MyViewGroup extends ViewGroup{
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return false;
     }
 }

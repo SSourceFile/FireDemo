@@ -4,9 +4,33 @@
     android:layout_height="match_parent"
     android:id="@+id/rx_root_view">
 
-    <com.example.hmh.firedemo.widght.MyView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
+        <com.example.hmh.firedemo.widght.MyListView
+            android:id="@+id/my_list"
+            android:background="@color/result_points"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </com.example.hmh.firedemo.widght.MyView>
+
+        </com.example.hmh.firedemo.widght.MyListView>
+
+    </LinearLayout>
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/gesture"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gestureColor="@android:color/holo_red_dark"
+        android:gestureStrokeType="multiple">
+
+    </android.gesture.GestureOverlayView>
+
+    <com.example.hmh.firedemo.widght.TouchEvents
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/colorPrimary">
+
+    </com.example.hmh.firedemo.widght.TouchEvents>
 </LinearLayout>

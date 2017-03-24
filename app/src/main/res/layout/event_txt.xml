@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.hmh.firedemo.widght.TouchEvents xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_test"
+    android:layout_width="200dp"
+    android:layout_height="80dp"
+    android:text="dfadfafd"
+    android:textSize="19sp">
+
+</com.example.hmh.firedemo.widght.TouchEvents>
