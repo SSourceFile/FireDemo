@@ -102,6 +102,11 @@ public class RxjavaTestActivity extends BaseActivity implements GestureDetector.
     }
 
     @Override
+    protected void initListener() {
+
+    }
+
+    @Override
     protected void initView() {
         initRxjava();
         initGesture();

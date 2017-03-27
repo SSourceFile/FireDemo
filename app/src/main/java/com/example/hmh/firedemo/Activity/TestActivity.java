@@ -26,6 +26,11 @@ public class TestActivity extends BaseActivity {
     }
 
     @Override
+    protected void initListener() {
+
+    }
+
+    @Override
     protected void initView() {
 
     }

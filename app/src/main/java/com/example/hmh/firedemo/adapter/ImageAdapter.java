@@ -33,7 +33,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Logger.e(position+"  ///");
         String str = mDataList.get(position);
         holder.mtv.setText(str);
     }

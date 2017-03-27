@@ -35,7 +35,10 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         mUnBinder = ButterKnife.bind(this);
 
         initView();
+        initListener();
     }
+
+    protected abstract void initListener();
 
     protected  void initSwipeBackFinish(){
         mSwipeBackHelper = new BGASwipeBackHelper(this, this);

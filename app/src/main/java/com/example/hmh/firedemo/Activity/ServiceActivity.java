@@ -80,7 +80,7 @@ public class ServiceActivity extends BaseActivity {
     };
 
 
-    private void initListener() {
+    protected void initListener() {
         //开启服务
         mStartService.setOnClickListener(new View.OnClickListener() {
             @Override

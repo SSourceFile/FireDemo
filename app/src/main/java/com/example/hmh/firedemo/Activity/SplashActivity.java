@@ -10,6 +10,11 @@ import com.example.hmh.firedemo.base.BaseActivity;
 public class SplashActivity extends BaseActivity {
 
     @Override
+    protected void initListener() {
+
+    }
+
+    @Override
     protected void initView() {
 
     }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chat">聊天</string>
+    <string name="discover">发现</string>
+    <string name="contacts">通讯录</string>
+</resources>

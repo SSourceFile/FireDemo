@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 
 import com.example.hmh.firedemo.R;
 import com.example.hmh.firedemo.base.BaseActivity;
+import com.orhanobut.logger.Logger;
 import com.uuzuche.lib_zxing.activity.CaptureFragment;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
@@ -30,6 +31,11 @@ public class ScanActivity extends BaseActivity {
     private static boolean isOpen = false;
 
     @Override
+    protected void initListener() {
+
+    }
+
+    @Override
     protected void initView() {
         CaptureFragment captureFragment = new CaptureFragment();
         CodeUtils.setFragmentArgs(captureFragment, R.layout.my_camera);
@@ -37,19 +43,20 @@ public class ScanActivity extends BaseActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fl_my_container, captureFragment)
-                .commitAllowingStateLoss();
+                .commit();
 //        initLight();
     }
-//    @Optional
-//    @OnClick(R.id.linear1) void initLight() {
-//        if(!isOpen){
-//            CodeUtils.isLightEnable(true);
-//            isOpen = true;
-//        }  else{
-//            CodeUtils.isLightEnable(false);
-//            isOpen = false;
-//        }
-//    }
+    @OnClick(R.id.linear1)
+    void initLight() {
+        Logger.e("打开");
+        if(!isOpen){
+            CodeUtils.isLightEnable(true);
+            isOpen = true;
+        }  else{
+            CodeUtils.isLightEnable(false);
+            isOpen = false;
+        }
+    }
 
 
     /**
@@ -84,16 +91,5 @@ public class ScanActivity extends BaseActivity {
         return R.layout.activity_scan;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }
