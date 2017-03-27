@@ -85,7 +85,8 @@ public class ServiceActivity extends BaseActivity {
         mStartService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startService(new Intent(ServiceActivity.this, MyService.class));
+//                startService(new Intent(ServiceActivity.this, MyService.class));
+                startActivity(new Intent(ServiceActivity.this, TestActivity.class));
             }
         });
         //停止服务

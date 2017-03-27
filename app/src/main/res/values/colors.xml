@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="scan_corner_color">#0effc2</color>
+    <color name="navigationBarColor">@android:color/black</color>
+    <color name="windowBackground">@android:color/white</color>
 </resources>

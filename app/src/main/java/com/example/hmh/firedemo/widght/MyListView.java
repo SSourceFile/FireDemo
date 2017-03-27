@@ -19,6 +19,10 @@ public class MyListView extends ListView {
         super(context, attrs);
     }
 
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return super.onInterceptTouchEvent(ev);
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
