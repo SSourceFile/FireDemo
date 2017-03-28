@@ -102,6 +102,11 @@ public class RxjavaTestActivity extends BaseActivity implements GestureDetector.
     }
 
     @Override
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+        super.overridePendingTransition(enterAnim, exitAnim);
+    }
+
+    @Override
     protected void initListener() {
 
     }

@@ -27,7 +27,7 @@ public class MyApplication extends Application {
     /**初始化侧滑activity*/
     private void initBGASwipe() {
        //必须在application的onCreate方法中执行
-        BGASwipeBackManager.getInstance().init(this);
+//        BGASwipeBackManager.getInstance().init(this);
     }
 
     /**初始化日志系统*/

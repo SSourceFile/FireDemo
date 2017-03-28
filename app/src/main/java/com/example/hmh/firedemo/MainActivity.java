@@ -245,6 +245,7 @@ public class MainActivity extends BaseActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.e("fuck", "返回结果");
         /**
          * 处理二维码扫描结果
          */
