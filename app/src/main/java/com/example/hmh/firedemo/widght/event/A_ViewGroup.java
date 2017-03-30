@@ -45,6 +45,9 @@ public class A_ViewGroup extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = false;
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            result = true;
+        }
         Log.e("fuck",Utils.getActionName(event) + ", ViewGroupA.touch = " + result);
         return result;
     }

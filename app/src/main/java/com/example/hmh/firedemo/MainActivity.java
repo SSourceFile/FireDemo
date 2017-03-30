@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.example.hmh.firedemo.Activity.RxjavaTestActivity;
 import com.example.hmh.firedemo.Activity.ScanActivity;
 import com.example.hmh.firedemo.Activity.ServiceActivity;
+import com.example.hmh.firedemo.Activity.WebViewActivity;
 import com.example.hmh.firedemo.Fragment.HomeFragment;
 import com.example.hmh.firedemo.Fragment.ImageFragment;
 import com.example.hmh.firedemo.Fragment.NewFragment;
@@ -309,7 +310,7 @@ public class MainActivity extends BaseActivity
             startActivity(new Intent(MainActivity.this, RxjavaTestActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
-
+            startActivity(new Intent(MainActivity.this, WebViewActivity.class));
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

@@ -35,6 +35,8 @@
         <activity android:name=".Activity.ServiceActivity" />
         <activity android:name=".Activity.RxjavaTestActivity" />
         <activity android:name=".Activity.TestActivity"/>
+        <activity android:name=".Activity.WebViewActivity"/>
+        <activity android:name=".Activity.ImageActivity"/>
 
 
         <!--服务-->

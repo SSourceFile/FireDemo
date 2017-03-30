@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 public class Utils {
 	
 	/**
-	 * ��ȡ�����¼���Action����
+	 *
 	 * @param ev
 	 */
 	public static String getActionName(MotionEvent ev) {
