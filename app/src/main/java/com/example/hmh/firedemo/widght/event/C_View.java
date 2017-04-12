@@ -37,6 +37,9 @@ public class C_View extends android.support.v7.widget.AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = false;
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+            result = true;
+        }
         Log.e("fuck",Utils.getActionName(event) + ", ViewC.touch = " + result);
         return result;
     }

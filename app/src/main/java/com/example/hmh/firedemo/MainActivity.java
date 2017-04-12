@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.example.hmh.firedemo.Activity.RxjavaTestActivity;
 import com.example.hmh.firedemo.Activity.ScanActivity;
+import com.example.hmh.firedemo.Activity.ScreenWebActivity;
 import com.example.hmh.firedemo.Activity.ServiceActivity;
 import com.example.hmh.firedemo.Activity.WebViewActivity;
 import com.example.hmh.firedemo.Fragment.HomeFragment;
@@ -312,7 +313,7 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_slideshow) {
             startActivity(new Intent(MainActivity.this, WebViewActivity.class));
         } else if (id == R.id.nav_manage) {
-
+            startActivity(new Intent(this, ScreenWebActivity.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

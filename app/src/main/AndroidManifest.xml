@@ -19,6 +19,7 @@
         android:name=".base.MyApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated ="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
@@ -37,7 +38,10 @@
         <activity android:name=".Activity.TestActivity"/>
         <activity android:name=".Activity.WebViewActivity"/>
         <activity android:name=".Activity.ImageActivity"/>
-
+        <activity android:name=".Activity.ScreenWebActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <!--服务-->
         <service android:name="com.example.hmh.firedemo.Service.MyService"

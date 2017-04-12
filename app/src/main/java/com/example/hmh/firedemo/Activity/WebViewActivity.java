@@ -1,6 +1,7 @@
 package com.example.hmh.firedemo.Activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -24,6 +25,9 @@ public class WebViewActivity extends BaseActivity {
     WebView mwebView;
     private JavascriptInterface window;
 
+    private Handler handler = new Handler();
+    private WebSettings settings;
+
     @Override
     protected void initListener() {
 //        window.openImage();
@@ -31,22 +35,43 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        WebSettings settings = mwebView.getSettings();
-        mwebView.loadUrl("file:///android_asset/image.html");
-        window = new JavascriptInterface(this);
-        mwebView.addJavascriptInterface(window, "imageListener");
-        mwebView.setWebViewClient(new WebViewClient(){
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                mwebView.loadUrl("javascript:(function(){"
-                        + "var objs = document.getElementsByTagName(\"img\"); "
-                        + "for(var i=0;i<objs.length;i++)  " + "{"
-                        + "    objs[i].onclick=function()  " + "    {  "
-                        + "        window.imagelistner.openImage(this.src);  "
-                        + "    }  " + "}" + "})()");
+        settings = mwebView.getSettings();
+//        mwebView.loadUrl("file:///android_asset/image.html");
+//        window = new JavascriptInterface(this);
+//        mwebView.addJavascriptInterface(window, "imageListener");
+//        mwebView.setWebViewClient(new WebViewClient(){
+//            @Override
+//            public void onPageFinished(WebView view, String url) {
+//                super.onPageFinished(view, url);
+//                mwebView.loadUrl("javascript:(function(){"
+//                        + "var objs = document.getElementsByTagName(\"img\"); "
+//                        + "for(var i=0;i<objs.length;i++)  " + "{"
+//                        + "    objs[i].onclick=function()  " + "    {  "
+//                        + "        window.imagelistner.openImage(this.src);  "
+//                        + "    }  " + "}" + "})()");
+//            }
+//        });
+
+        initLongView();
+
+
+
+    }
+
+    /**long */
+    private void initLongView() {
+        settings.setJavaScriptEnabled(true);
+        mwebView.addJavascriptInterface(new Object(){
+            public void clickOnAndroid(){
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mwebView.loadUrl("javascript:wave()");
+                    }
+                });
             }
-        });
+        }, "demo");
+        mwebView.loadUrl("file:///android_asset/long.html");
     }
 
     @Override
