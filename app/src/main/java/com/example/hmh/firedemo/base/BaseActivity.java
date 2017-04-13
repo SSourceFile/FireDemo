@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.hmh.firedemo.Manager.ActivityManager;
 import com.example.hmh.firedemo.R;
 import com.example.hmh.firedemo.utils.StatusBarUtil;
 
@@ -33,6 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
         mUnBinder = ButterKnife.bind(this);
+        ActivityManager.getAppManager().addActivity(this);
 
         initView();
         initListener();
@@ -66,6 +68,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onDestroy() {
         super.onDestroy();
         mUnBinder.unbind();
+        ActivityManager.getAppManager().finishActivity();
     }
     /**
      * 是否支持滑动返回。这里在父类中默认返回 true 来支持滑动返回，如果某个界面不想支持滑动返回则重写该方法返回 false 即可

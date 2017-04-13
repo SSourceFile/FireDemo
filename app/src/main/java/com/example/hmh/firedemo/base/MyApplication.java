@@ -7,6 +7,7 @@ import com.orhanobut.logger.Logger;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager;
+import io.realm.Realm;
 
 /**
  * Created by hmh on 2017/3/9.
@@ -22,6 +23,12 @@ public class MyApplication extends Application {
         ZXingLibrary.initDisplayOpinion(this);
         initLog();
         initBGASwipe();
+        //初始化数据库
+        initRealm();
+    }
+
+    private void initRealm() {
+        Realm.init(this);
     }
 
     /**初始化侧滑activity*/

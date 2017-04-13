@@ -9,4 +9,6 @@ public interface FinalApi {
     int REQUEST_CODE = 999;
     int REQUEST_IMAGE = 666;
     int REQUEST_CAMERA_PERM = 777;
+
+    public static final String KEY_CACHE_DATA = "data";
 }
